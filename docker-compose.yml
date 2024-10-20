@@ -1,0 +1,27 @@
+services:
+  db:
+    image: postgres:latest
+    volumes:
+      - db-data:/var/lib/postgresql/data/pgdata
+    env_file:
+      - .env
+    environment:
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    ports:
+      - 5432:5432
+  
+  fastapi:
+    depends_on:
+      - db
+    env_file:
+      - .env
+    ports:
+      - 80:80
+    volumes:
+      - ./app:/bayou_wives_service/app
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+volumes:
+  db-data:
