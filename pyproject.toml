@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "bayou-wives-service"
+version = "0.1.0"
+description = "services bayou wives"
+authors = ["Seth <wsethgreen@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = {version = "^0.115.2", extras = ["standard"]}
+pydantic = "^2.9.2"
+alembic = "^1.13.3"
+sqlmodel = "^0.0.22"
+psycopg2 = "^2.9.10"
+pydantic-settings = "^2.6.0"
+passlib = {version = "^1.7.4", extras = ["bcrypt"]}
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
