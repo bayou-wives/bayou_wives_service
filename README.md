@@ -82,6 +82,31 @@ opensll rand -hex 32
 This app uses Docker containers for local development. Therefore, you will need to download 
 [Docker Desktop](https://www.docker.com/products/docker-desktop/) or a similar tool.
 
+### Database Migrations
+
+This app uses [Alembic](https://alembic.sqlalchemy.org/en/latest/index.html) 
+for database migrations. See the [tutorial](https://alembic.sqlalchemy.org/en/latest/tutorial.html) 
+for basic functionality and usage.
+
+#### Generating Running Database Migrations Locally
+
+**Note**: Prior to generating or running a database migration, you must have the database container running 
+which allows us to connect to the database. You also will likely need to update your `POSTGRES_SERVER`
+environment variable to `localhost`.
+
+To generate a database migration after making changes to the `app.db.models`, 
+run the following command from the root directory:
+
+```commandline
+alembic revision --autogenerate -m "description of your changes"
+```
+
+To run your database migrations, run the following command from the root directory:
+
+```commandline
+alembic upgrade head
+```
+
 ## Running the app
 
 Build and start the app by running the following command from the root directory:
