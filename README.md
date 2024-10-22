@@ -21,6 +21,12 @@ prior to using Poetry. To do this, run the following command in the root directo
 py -3.12 -m venv .venv
 ```
 
+Activate this virtual environment by running:
+
+```commandline
+source .venv/Scripts/activate
+```
+
 Install poetry with the following command:
 
 ```commandline
