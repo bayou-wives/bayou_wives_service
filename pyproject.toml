@@ -11,6 +11,9 @@ fastapi = {version = "^0.115.2", extras = ["standard"]}
 pydantic = "^2.9.2"
 alembic = "^1.13.3"
 sqlmodel = "^0.0.22"
+psycopg2 = "^2.9.10"
+pydantic-settings = "^2.6.0"
+passlib = {version = "^1.7.4", extras = ["bcrypt"]}
 
 
 [build-system]
